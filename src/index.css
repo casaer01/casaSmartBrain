@@ -5,9 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #40E0D0;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: rgb(81,58,180);
+  background: linear-gradient(90deg, rgba(81,58,180,1) 0%, rgba(227,45,231,1) 35%, rgba(29,239,253,1) 50%, rgba(227,45,231,1) 65%, rgba(81,58,180,1) 100%); 
   font-family: Arial, Helvetica, sans-serif;
 }
 

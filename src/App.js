@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { Component } from 'react';
 import Particles from 'react-particles-js';
-import Clarifai from 'clarifai';
+// import Clarifai from 'clarifai';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Navigation from './components/Navigation/Navigation';
 import Signin from './components/Signin/Signin';
@@ -11,19 +11,55 @@ import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
 import './App.css';
 
-// eslint-disable-next-line
-const app = new Clarifai.App({
-  apiKey: '417a4b450e3042dc90979d41d363adc0'
- });
 
 const particlesOptions = {
-  particles: {
-    number: {
-      value: 30,
-      density: {
-        enable: true,
-        value_area: 800
-      }
+  "particles": {
+    "number": {
+        "value": 160,
+        "density": {
+            "enable": false
+        }
+    },
+    "size": {
+        "value": 3,
+        "random": true,
+        "anim": {
+            "speed": 4,
+            "size_min": 0.3
+        }
+    },
+    "line_linked": {
+        "enable": false
+    },
+    "move": {
+        "random": true,
+        "speed": 1,
+        "direction": "top",
+        "out_mode": "out"
+    }
+},
+"interactivity": {
+    "events": {
+        "onhover": {
+            "enable": true,
+            "mode": "bubble"
+        },
+        "onclick": {
+            "enable": true,
+            "mode": "repulse"
+        }
+    },
+    "modes": {
+        "bubble": {
+            "distance": 250,
+            "duration": 2,
+            "size": 0,
+            "opacity": 0
+        },
+        "repulse": {
+            "distance": 400,
+            "duration": 4
+        }
     }
   }
 }
@@ -73,7 +109,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000')
+    fetch('https://intense-oasis-12957.herokuapp.com/')
     .then(response => response.json())
     .then(console.log)
   }
@@ -102,7 +138,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
-      fetch('http://localhost:3000/imageurl', {
+      fetch('https://intense-oasis-12957.herokuapp.com/imageurl', {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -112,7 +148,7 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch('http://localhost:3000/image', {
+          fetch('https://intense-oasis-12957.herokuapp.com/image', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
