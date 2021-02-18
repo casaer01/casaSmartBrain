@@ -128,6 +128,7 @@ class App extends Component {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         headers: {"Access-Control-Allow-Origin" : `https://casas-image-recognition.herokuapp.com/`},
+        headers: {"Access-Control-Allow-Origin" : `https://intense-oasis-12957.herokuapp.com/`},
         body: JSON.stringify({
           input: this.state.input
         })
@@ -139,6 +140,7 @@ class App extends Component {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             headers: {"Access-Control-Allow-Origin" : `https://casas-image-recognition.herokuapp.com/`},
+            headers: {"Access-Control-Allow-Origin" : `https://intense-oasis-12957.herokuapp.com/`},
             body: JSON.stringify({
               id: this.state.user.id
             })
