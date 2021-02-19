@@ -21,8 +21,8 @@ class Signin extends React.Component {
       fetch('https://intense-oasis-12957.herokuapp.com/signin', {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
-        headers: {"Access-Control-Allow-Origin" : `https://casas-image-recognition.herokuapp.com/`},
-        headers: {"Access-Control-Allow-Origin" : `https://intense-oasis-12957.herokuapp.com/`},
+        // headers: {"Access-Control-Allow-Origin" : `https://casas-image-recognition.herokuapp.com/`},
+        // headers: {"Access-Control-Allow-Origin" : `https://intense-oasis-12957.herokuapp.com/`},
         body: JSON.stringify({
           email: this.state.signInEmail,
           password: this.state.signInPassword
